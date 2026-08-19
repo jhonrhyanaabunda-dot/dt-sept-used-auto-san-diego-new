@@ -409,12 +409,6 @@
     font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
     color: var(--red-deep);
   }
-  .hero-photo.full-bleed .credit {
-    position: absolute;
-    bottom: 24px; right: clamp(20px, 4vw, 56px);
-    color: var(--white);
-    text-shadow: 0 1px 8px rgba(0,0,0,.45);
-  }
 
   /* ---------- Article body grid (sticky TOC + column) ---------- */
   .article-grid {
@@ -494,7 +488,7 @@
   .gutter .chip .sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
 
   /* ---------- Section + typography ---------- */
-  section.s { scroll-margin-top: 32px; padding: 64px 0; border-top: 1px solid var(--rule); }
+  section.s { scroll-margin-top: 32px; padding: 52px 0; border-top: 1px solid var(--rule); }
   section.s:first-of-type { border-top: none; padding-top: 8px; }
   .section-num {
     display: flex; align-items: baseline; gap: 16px;
@@ -554,6 +548,7 @@
     letter-spacing: -0.005em;
     text-wrap: balance;
   }
+  blockquote.pull:last-child { margin-bottom: 0; border-bottom: none; }
   blockquote.pull cite {
     display: block;
     margin-top: 24px;
@@ -624,7 +619,8 @@
   .spec-strip .item:last-child { border-right: none; }
   .spec-strip .num { font-family: var(--display); font-size: 38px; font-weight: 600; line-height: 1.05; color: var(--red-deep); letter-spacing: -0.015em; font-feature-settings: "lnum"; min-height: calc(38px * 1.05); margin-bottom: 14px; white-space: nowrap; }
   .spec-strip .num small { font-size: 14px; color: var(--ink-soft); font-weight: 400; margin-left: 3px; letter-spacing: 0; }
-  .spec-strip .lbl { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-top: 0; line-height: 1.5; min-height: calc(11px * 1.5 * 2); display: flex; align-items: flex-start; justify-content: center; text-align: center; }
+  .spec-strip .lbl { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-top: 0; line-height: 1.5; min-height: calc(11px * 1.5 * 2);
+    display: block; text-align: center; }
 
   /* Stats variant: short numeric headers, bigger type, centered, modest breakout */
   .spec-strip.stats {
@@ -637,7 +633,8 @@
   .spec-strip.stats .item:last-child { padding-right: 12px; }
   .spec-strip.stats .num { font-size: 34px; line-height: 1; min-height: 38px; margin-bottom: 14px; white-space: nowrap; }
   .spec-strip.stats .num small { font-size: 13px; letter-spacing: 0; margin-left: 4px; }
-  .spec-strip.stats .lbl { font-size: 10px; min-height: calc(10px * 1.5 * 3); display: flex; align-items: flex-start; justify-content: center; text-align: center; }
+  .spec-strip.stats .lbl { font-size: 10px; min-height: calc(10px * 1.5 * 3);
+    display: block; text-align: center; }
 
   /* ---------- Safety badge ---------- */
   .safety-banner {
@@ -1289,7 +1286,7 @@
   <div class="wrap">
     <div class="eyebrow"><span class="pip"></span> Used &amp; Certified Pre-Owned · Dalton Toyota National City</div>
     <h1>Your <em>used auto</em> in San Diego starts on the Mile of Cars.</h1>
-    <p class="deck">Shopping for a used auto in San Diego? Dalton Toyota National City stocks used and Toyota Certified Pre-Owned vehicles off I-5 on the Mile of Cars in National City, minutes from downtown. We price every car against the live San Diego market, hand you the full history report up front, and line up financing before you make the drive. Start at <a href="https://www.toyotadalton.com/" rel="noopener" target="_blank">toyotadalton.com</a>.</p>
+    <p class="deck">Shopping for a used auto in San Diego? We stock used and Toyota Certified Pre-Owned vehicles on the Mile of Cars, priced against the live market with the full history report up front. Start at <a href="https://www.toyotadalton.com/" rel="noopener" target="_blank">toyotadalton.com</a>.</p>
 
     <div class="hero-meta">
       <div class="item"><div class="lbl">Address</div><div class="val">2400 National City Blvd<small>National City, CA 91950</small></div></div>
@@ -1307,7 +1304,6 @@
          fetchpriority="high"
          width="1600"
          height="1200" />
-    <span class="credit">DALTON TOYOTA NATIONAL CITY · USED &amp; CPO</span>
     <figcaption class="visually-hidden">Used and Toyota Certified Pre-Owned vehicles at Dalton Toyota National City on the Mile of Cars, minutes from downtown San Diego.</figcaption>
   </figure>
 </header>
@@ -1342,18 +1338,20 @@
       <section class="s" id="why-used">
         <div class="section-num"><span>01</span><span>From the used-car desk</span></div>
         <h2 class="section-h">Why a used or Certified Pre-Owned Toyota <em>holds up</em> in San Diego.</h2>
-        <p class="lede">A used auto is the smart middle path between a brand-new sticker price and the gamble of a private-party listing. You skip the steepest part of the depreciation curve - the part that hits hardest in the first two to three years - while still getting a vehicle that has plenty of road left in it.</p>
+        <p class="lede">A used auto is the middle path between a new sticker price and the gamble of a private-party listing. You skip the steepest depreciation, the first two to three years, and still get a vehicle with plenty of road left.</p>
         <p>On a Toyota, "plenty of road left" is not marketing. It is the reason resale values run high. <em>Reviewed and posted by Hector Baldivia, Used Car Manager, Dalton Toyota National City.</em></p>
 
         <h3>The honest read from our lot</h3>
-        <p>Not every used car is worth buying, and not every Certified Pre-Owned badge means the same thing. We have walked away from cars at auction because the frame measurements did not line up with the sticker, and we have declined trade-ins where the history report and the odometer told two different stories. That is the part of the used-car business most San Diego shoppers never see. It is also the part that protects you.</p>
+        <p>Not every used car is worth buying, and not every Certified Pre-Owned badge means the same thing. We walk away from auction cars whose frame measurements don't match the sticker. That's the part of the business most shoppers never see, and the part that protects you.</p>
 
         <blockquote class="pull">
           We have walked away from cars at auction because the frame measurements did not line up with the sticker. That is the part of the used-car business most shoppers never see. It is also the part that protects you.
         </blockquote>
 
         <h3>The certification floor is published</h3>
-        <p>When our team inspected the last batch of CPO Camrys and RAV4s that came through reconditioning, we replaced cabin air filters and brake pads that still had technical life left, because Toyota's certification standard sets a higher floor than "legal to sell." That floor is published. Toyota's Certified Used Vehicle program requires a 160-point inspection and backs every certified car with a 12-month/12,000-mile limited complete warranty plus a 7-year/100,000-mile limited powertrain warranty from the original in-service date - terms you can read directly on Toyota's official program page at <a href="https://www.toyota.com/certified/" rel="noopener" target="_blank">toyota.com</a>. We do not set those numbers. We are held to them.</p>
+        <p>On the last batch of CPO Camrys and RAV4s through reconditioning, we replaced cabin air filters and brake pads that still had technical life left, because Toyota's certification standard sets a higher floor than "legal to sell."</p>
+
+        <p>The program requires a 160-point inspection and backs every certified car with a 12-month/12,000-mile limited complete warranty plus a 7-year/100,000-mile limited powertrain warranty from the original in-service date. Those terms are published at <a href="https://www.toyota.com/certified/" rel="noopener" target="_blank">toyota.com</a>. We don't set those numbers; we're held to them.</p>
 
         <div class="spec-strip">
           <div class="item"><div class="num">160<small> pts</small></div><div class="lbl">Toyota Certified inspection · every CPO unit</div></div>
@@ -1416,10 +1414,10 @@
         <p class="lede">A used auto is only as good as what you can verify about it. Two checks do most of the heavy lifting, and we run both before a car earns a spot on our front line.</p>
 
         <h3>Title and accident history</h3>
-        <p>We pull a vehicle history report on every used unit we retail. A report from a service like <a href="https://www.carfax.com/" rel="noopener" target="_blank">Carfax</a> surfaces title brands, reported accidents, prior registrations, and service records. A salvage or rebuilt title is not always disqualifying, but it changes the price and the conversation, and you deserve to know about it before you fall for the car, not after.</p>
+        <p>We pull a vehicle history report on every used unit we retail. A report from <a href="https://www.carfax.com/" rel="noopener" target="_blank">Carfax</a> surfaces title brands, accidents, prior registrations, and service records. A salvage title isn't always disqualifying, but you should know before you fall for the car.</p>
 
         <h3>Open safety recalls</h3>
-        <p>Recalls follow the VIN, not the owner, so a used car can carry an unrepaired recall from a previous owner who never brought it in. You can check any VIN for free on the federal database at <a href="https://www.nhtsa.gov/recalls" rel="noopener" target="_blank">nhtsa.gov</a>. Our service team verified the recall status on our current CPO inventory and closed out the open campaigns we found before those cars went up for sale. If you are shopping a used Toyota anywhere in San Diego, run the VIN yourself - it takes thirty seconds and it is the single best free check available.</p>
+        <p>Recalls follow the VIN, not the owner, so a used car can carry an unrepaired recall from someone who never brought it in. Check any VIN free on the federal database at <a href="https://www.nhtsa.gov/recalls" rel="noopener" target="_blank">nhtsa.gov</a>. Our service team verified recall status across our current CPO inventory before those cars went up for sale.</p>
 
         <h3>Real-world fuel economy</h3>
         <p>Used-car listings love to quote a best-case MPG number. The honest figure is the EPA combined rating, which you can look up per model year and trim at <a href="https://www.fueleconomy.gov/" rel="noopener" target="_blank">fueleconomy.gov</a>. A 2021 RAV4 Hybrid and a 2021 RAV4 gas model are different cars at the pump, and the federal rating is the apples-to-apples way to compare them.</p>
@@ -1529,7 +1527,7 @@
           A cheaper price on a car three hours up the coast stops looking cheap the first time it needs warranty service and you are making that drive on a Saturday.
         </blockquote>
 
-        <p>We also see a lot of cross-shopping between standard used and a low-mileage CPO unit. The deciding factor is usually the warranty math, not the badge. If you plan to keep the car past 60,000 miles, the 7-year/100,000-mile powertrain coverage on a certified Toyota often pays for the price difference by itself. If you are a short-term owner, it may not. We run that comparison with you in plain numbers.</p>
+        <p>Cross-shopping standard used against a low-mileage CPO unit usually comes down to warranty math, not the badge. Past 60,000 miles, the 7-year/100,000-mile powertrain coverage often pays for the price difference by itself. We run that comparison in plain numbers.</p>
       </section>
 
       <!-- §08 Financing a used Toyota without surprises -->
@@ -1557,7 +1555,7 @@
         <div class="section-num"><span>09</span><span>After the sale</span></div>
         <h2 class="section-h">Owning a used Toyota in San Diego: <em>service and upkeep</em>.</h2>
         <p class="lede">A used car you cannot easily maintain is a false economy. Buying where you can service is part of the value.</p>
-        <p>Our on-site service and parts departments handle scheduled maintenance, recall work, and the wear items that come with any used vehicle. Toyota's recommended maintenance intervals - typically service every 5,000 miles or six months for most recent models - are published in the owner's manual and on the manufacturer's owner resources at <a href="https://www.toyota.com/owners/" rel="noopener" target="_blank">toyota.com</a>. Sticking to that schedule is the cheapest insurance you can buy on a used car.</p>
+        <p>Our on-site service and parts departments handle scheduled maintenance, recall work, and normal wear items. Toyota's intervals, typically every 5,000 miles or six months on recent models, are published at <a href="https://www.toyota.com/owners/" rel="noopener" target="_blank">toyota.com</a>. Sticking to that schedule is the cheapest insurance on a used car.</p>
 
         <p>San Diego's climate is mostly kind to vehicles - no road salt, no deep freeze - but coastal humidity and year-round sun are real. We checked the cooling system and A/C performance on our CPO units during reconditioning because a working A/C is not a luxury in a Southern California summer, it is a daily-use requirement.</p>
 
@@ -1633,7 +1631,7 @@
   <div class="wrap">
     <div class="eyebrow">Dalton Toyota National City</div>
     <h2>A Toyota store on the Mile of Cars <em>since 1996</em>.</h2>
-    <p class="band-deck">We've been part of National City since 1996, recognized as Chamber of Commerce Mile of Cars Dealership of the Year - a track record built on straightforward numbers, deal by deal. We stock used and Toyota Certified Pre-Owned vehicles at 2400 National City Blvd.</p>
+    <p class="band-deck">We've been part of National City since 1996 and were named Chamber of Commerce Mile of Cars Dealership of the Year. We stock used and Toyota Certified Pre-Owned vehicles at 2400 National City Blvd.</p>
 
     <div class="trust-grid">
       <div class="item">
@@ -1706,7 +1704,7 @@
           <details>
             <summary>What is the difference between a used and a Certified Pre-Owned Toyota?</summary>
             <div class="answer">
-              <p>A standard used car is sold as-is with whatever original factory warranty remains. A Toyota Certified Pre-Owned vehicle has passed a 160-point inspection and carries a 12-month/12,000-mile limited complete warranty plus a 7-year/100,000-mile limited powertrain warranty from its original in-service date. You can review the full program terms on Toyota's official site at <a href="https://www.toyota.com/certified/" rel="noopener" target="_blank">toyota.com</a>.</p>
+              <p>A standard used car is sold as-is with whatever factory warranty remains. A Toyota Certified Pre-Owned vehicle has passed a 160-point inspection and carries a 12-month/12,000-mile complete warranty plus 7-year/100,000-mile powertrain coverage. Full terms are at <a href="https://www.toyota.com/certified/" rel="noopener" target="_blank">toyota.com</a>.</p>
               <p>CPO costs a bit more up front and caps your repair risk; standard used costs less and shifts that risk to you.</p>
             </div>
           </details>
@@ -1736,7 +1734,7 @@
           <details>
             <summary>Can I trade in my current car toward a used auto?</summary>
             <div class="answer">
-              <p>Absolutely. Tell us what you are driving now. We value it against current benchmarks from sources like <a href="https://www.kbb.com/" rel="noopener" target="_blank">Kelley Blue Book</a> and factor a fair trade number into the deal. You can get that started online.</p>
+              <p>Absolutely. Tell us what you're driving now and we'll value it against current benchmarks from sources like <a href="https://www.kbb.com/" rel="noopener" target="_blank">Kelley Blue Book</a>, then factor a fair trade number into the deal. You can start that online.</p>
             </div>
           </details>
 
@@ -1799,7 +1797,14 @@
           <div style="font-size:12px; color:var(--muted); margin-top:10px; letter-spacing:0.04em;">Dalton Toyota National City · 2400 National City Blvd, National City, CA 91950</div>
         </div>
 
-        <p style="font-size:15px; color:var(--ink-soft); max-width:660px;">Toyota Certified Used Vehicle program details - the 160-point inspection, 12-month/12,000-mile limited complete warranty, and 7-year/100,000-mile limited powertrain warranty from the original in-service date - are described from Toyota's published program terms at toyota.com/certified. Verify any model's EPA combined fuel economy at fueleconomy.gov and check any VIN for open safety recalls free at nhtsa.gov. As of August 2026, inventory and current offers change often and should be confirmed with our team before you visit. For today's used and Certified Pre-Owned availability, call Sales at <a class="tel" href="tel:+16194745573"><strong>(619) 474-5573</strong></a>.</p>
+        <ul class="bullets" style="font-size:15px; color:var(--ink-soft); max-width:660px;">
+          <li><strong>Certified program terms.</strong> The 160-point inspection, 12-month/12,000-mile limited complete warranty, and 7-year/100,000-mile limited powertrain warranty from the original in-service date are published at toyota.com/certified.</li>
+          <li><strong>Fuel economy.</strong> Verify any model's EPA combined figure at fueleconomy.gov.</li>
+          <li><strong>Recalls.</strong> Check any VIN for open safety recalls free at nhtsa.gov.</li>
+          <li><strong>Inventory.</strong> As of August 2026, stock and offers change often and should be confirmed before you visit.</li>
+        </ul>
+
+        <p style="font-size:15px; color:var(--ink-soft); max-width:660px;">For today's used and Certified Pre-Owned availability, call Sales at <a class="tel" href="tel:+16194745573"><strong>(619) 474-5573</strong></a>.</p>
 
         <p style="font-size:15px; color:var(--ink-soft); max-width:660px;"><em>If a question about buying a used or Certified Pre-Owned vehicle at Dalton Toyota National City is not answered here, call <a class="tel" href="tel:+16194745573">(619) 474-5573</a> and ask for the used-car desk, or browse current inventory at <a href="https://www.toyotadalton.com/" rel="noopener" target="_blank">toyotadalton.com</a>.</em></p>
 
